@@ -88,6 +88,14 @@ app.get('/posts/:id/edit', (req, res) =>{
     res.render("edit", {post})
 })
 
+//delete 
+app.delete("/posts/:id", (req, res) =>{
+    const {id} = req.params
+    posts = posts.filter((p) => id !== p.id)
+    console.log(post);
+    res.redirect("/posts")
+})
+
 app.listen(3000, () =>{
     console.log("Server is listening on the port 3000");
     
